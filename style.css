@@ -25,15 +25,6 @@ img { display: block; max-width: 100%; }
 
 /* Background: faint grid fading out, plus one soft white halo */
 .glow { display: none; }
-body::before {
-  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
-  background-size: 64px 64px;
-  -webkit-mask-image: radial-gradient(ellipse 80% 55% at 50% 0%, #000 30%, transparent 75%);
-          mask-image: radial-gradient(ellipse 80% 55% at 50% 0%, #000 30%, transparent 75%);
-}
 body::after {
   content: ""; position: fixed; top: -260px; left: 50%; width: 900px; height: 520px; transform: translateX(-50%);
   background: radial-gradient(closest-side, rgba(255,255,255,.08), transparent); z-index: -1; pointer-events: none;
@@ -61,7 +52,14 @@ body::after {
 main { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
 /* HERO */
-.hero { padding: 120px 0 96px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.hero { position: relative; padding: 120px 0 96px; text-align: center; display: flex; flex-direction: column; align-items: center; touch-action: pan-y; }
+.hero > *:not(.dots) { position: relative; z-index: 1; }
+.dots {
+  position: absolute; z-index: 0; top: -70px; bottom: 0; left: 50%; width: 100vw; height: calc(100% + 70px);
+  transform: translateX(-50%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 75% at 50% 40%, #000 35%, transparent 85%);
+          mask-image: radial-gradient(ellipse 70% 75% at 50% 40%, #000 35%, transparent 85%);
+}
 .eyebrow {
   display: inline-block; color: var(--muted); font-size: 12.5px; margin-bottom: 26px;
   padding: 5px 14px; border: 1px solid var(--line-2); border-radius: 999px; background: var(--panel);
