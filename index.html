@@ -18,6 +18,7 @@
 <body>
   <div class="glow glow-a" aria-hidden="true"></div>
   <div class="glow glow-b" aria-hidden="true"></div>
+  <canvas class="dots" id="dots" aria-hidden="true"></canvas>
 
   <header class="nav">
     <a class="logo" href="#top" aria-label="Home"><span>MA</span></a>
@@ -34,7 +35,6 @@
   <main id="top">
     <!-- HERO -->
     <section class="hero">
-      <canvas class="dots" id="dots" aria-hidden="true"></canvas>
       <p class="eyebrow mono">📍 Medina, Saudi Arabia · Taibah University</p>
       <h1>Mohammed <span class="grad">Alawfi</span></h1>
       <p class="role">AI Researcher in <b>Arabic NLP</b>, <b>GeoAI</b> &amp; <b>Computer Vision</b></p>
@@ -192,10 +192,9 @@
       const canvas = document.getElementById('dots');
       if (!canvas || !canvas.getContext) return;
       const ctx = canvas.getContext('2d');
-      const hero = canvas.parentElement;
       const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const GAP = 24, RADIUS = 150, BASE_R = 1.1, MAX_R = 3.2, BASE_A = 0.13;
-      let dots = [], w = 0, h = 0, dpr = 1, running = false, visible = true;
+      let dots = [], w = 0, h = 0, dpr = 1, running = false, visible = !document.hidden;
       const ptr = { x: -9999, y: -9999, active: false };
 
       function build() {
@@ -250,19 +249,16 @@
         if (!running) { running = true; requestAnimationFrame(loop); }
       }
 
-      function move(clientX, clientY) {
-        const rect = canvas.getBoundingClientRect();
-        ptr.x = clientX - rect.left; ptr.y = clientY - rect.top; ptr.active = true;
-        start();
-      }
-      hero.addEventListener('pointermove', e => move(e.clientX, e.clientY));
-      hero.addEventListener('pointerdown', e => move(e.clientX, e.clientY));
-      hero.addEventListener('pointerleave', () => { ptr.active = false; start(); });
-      hero.addEventListener('pointerup', e => { if (e.pointerType !== 'mouse') { ptr.active = false; start(); } });
-
-      if ('IntersectionObserver' in window) {
-        new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) start(); }).observe(hero);
-      }
+      // The canvas is fixed to the viewport, so client coordinates map directly.
+      function move(e) { ptr.x = e.clientX; ptr.y = e.clientY; ptr.active = true; start(); }
+      function leave() { ptr.active = false; start(); }
+      window.addEventListener('pointermove', move, { passive: true });
+      window.addEventListener('pointerdown', move, { passive: true });
+      document.documentElement.addEventListener('pointerleave', leave);
+      window.addEventListener('blur', leave);
+      window.addEventListener('pointerup', e => { if (e.pointerType !== 'mouse') leave(); });
+      window.addEventListener('pointercancel', leave);
+      document.addEventListener('visibilitychange', () => { visible = !document.hidden; if (visible) start(); });
       let resizeTimer;
       window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(build, 120); });
       build();
