@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mohammed Alawfi · AI Researcher</title>
+  <meta name="description" content="Mohammed Alawfi — AI student and researcher at Taibah University, Medina. Arabic NLP, GeoAI and computer vision.">
+  <meta property="og:title" content="Mohammed Alawfi · AI Researcher">
+  <meta property="og:description" content="Arabic NLP, GeoAI and computer vision. IEEE MCAIT 2026 presenter. Contributor to the Niyyah Saudi dialect intent dataset.">
+  <meta property="og:image" content="https://moalawfi.github.io/assets/img/basira-dashboard.png">
+  <meta name="theme-color" content="#070a14">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%2338bdf8'/><stop offset='1' stop-color='%23a78bfa'/></linearGradient></defs><rect width='64' height='64' rx='16' fill='url(%23g)'/><text x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='%23070a14'>MA</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glow glow-a" aria-hidden="true"></div>
+  <div class="glow glow-b" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="logo" href="#top" aria-label="Home"><span>MA</span></a>
+    <button class="menu" id="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav id="links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact" class="btn-sm">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="eyebrow mono">📍 Medina, Saudi Arabia · Taibah University</p>
+      <h1>Mohammed <span class="grad">Alawfi</span></h1>
+      <p class="role">AI Researcher in <b>Arabic NLP</b>, <b>GeoAI</b> &amp; <b>Computer Vision</b></p>
+      <p class="lead">I build datasets and models that understand how people in Saudi Arabia actually speak, and systems that read text and see images. From first-principles ML to deployed apps.</p>
+      <div class="cta">
+        <a class="btn" href="#research">View research</a>
+        <a class="btn ghost" href="https://github.com/moalawfi" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+      <ul class="highlights">
+        <li><span>🎤</span><div><b>IEEE MCAIT 2026</b><small>Paper presenter</small></div></li>
+        <li><span>🤗</span><div><b>Niyyah dataset</b><small>Saudi dialect intents</small></div></li>
+        <li><span>👁️</span><div><b>Basira</b><small>Arabic-first AI toolkit</small></div></li>
+      </ul>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section reveal">
+      <h2><span class="num mono">01</span> About</h2>
+      <div class="about">
+        <p>I'm an <b>Artificial Intelligence</b> student at <b>Taibah University</b> in Medina and a researcher in <b>Natural Language Processing</b>, <b>GeoAI</b> and <b>Computer Vision</b>.</p>
+        <p>Most of my work starts from a gap I care about: Arabic, and especially Saudi dialects, is underserved by mainstream NLP. I co-authored a human-validated Saudi Arabic intent benchmark and presented it at <b>IEEE MCAIT 2026</b>. I also like implementing algorithms from scratch, such as gradient descent and PCA, before reaching for libraries.</p>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="section reveal">
+      <h2><span class="num mono">02</span> Research</h2>
+
+      <article class="paper">
+        <div class="paper-tags">
+          <span class="tag ieee">IEEE MCAIT 2026</span>
+          <span class="tag">🎤 Presenter</span>
+          <span class="tag">📚 To appear in IEEE Xplore</span>
+        </div>
+        <h3>A Human-Validated Saudi Arabic Intent Benchmark Dataset with Leakage-Aware Splits and Evaluation Across Dialects and Model Families</h3>
+        <p class="authors"><b>M. A. Alawfi</b>, A. M. Almutairi, Y. M. Althubyani, I. F. Moawad</p>
+        <div class="stats">
+          <div><b>10,500</b><small>utterances</small></div>
+          <div><b>30</b><small>intent labels</small></div>
+          <div><b>4</b><small>language varieties</small></div>
+          <div><b>17</b><small>model configs</small></div>
+          <div><b>0.9987</b><small>best Macro-F1</small></div>
+        </div>
+        <p>Covers <b>Hijazi</b>, <b>Najdi</b>, <b>Shared Saudi Gulf</b> and <b>MSA</b>, validated by three domain experts, with leakage-aware splits. Evaluates classical classifiers, fine-tuned transformers, embedding models and prompted LLMs.</p>
+      </article>
+
+      <article class="card dataset">
+        <div class="emoji">🤗</div>
+        <div>
+          <h3>Niyyah · نيّة <small>Contributor</small></h3>
+          <p>The first Saudi dialects intent classification dataset, introduced in the paper above and published on Hugging Face.</p>
+          <a class="link" href="https://huggingface.co/datasets/niyyah/niyyah" target="_blank" rel="noopener">Open on Hugging Face ↗</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section reveal">
+      <h2><span class="num mono">03</span> Projects</h2>
+
+      <article class="feature">
+        <a class="shot" href="https://github.com/moalawfi/basira-ai" target="_blank" rel="noopener">
+          <img src="assets/img/basira-dashboard.png" alt="Basira web dashboard" loading="lazy">
+        </a>
+        <div class="feature-body">
+          <p class="eyebrow mono">Featured · Summer Training Program</p>
+          <h3>Basira · بصيرة</h3>
+          <p>Arabic-first AI that reads text and sees images: intent, sentiment, keywords, summaries, faces, shapes, colors and OCR. It runs through a CLI, a Flask REST API and a web dashboard, with every result stored in SQLite.</p>
+          <ul class="chips"><li>Python</li><li>scikit-learn</li><li>OpenCV</li><li>Flask</li><li>SQLite</li></ul>
+          <a class="link" href="https://github.com/moalawfi/basira-ai" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </div>
+      </article>
+
+      <div class="grid">
+        <a class="card proj" href="https://github.com/moalawfi/tweet-sentiment-analysis" target="_blank" rel="noopener">
+          <div class="thumb light"><img src="assets/img/tweet-roc.png" alt="ROC curve" loading="lazy"></div>
+          <h3>Tweet Sentiment Analysis</h3>
+          <p>End-to-end Sentiment140 pipeline, from BoW and TF-IDF to Qwen3 embeddings, with full evaluation.</p>
+          <ul class="chips"><li>NLP</li><li>Embeddings</li><li>scikit-learn</li></ul>
+        </a>
+        <a class="card proj" href="https://github.com/moalawfi/pca-experiments" target="_blank" rel="noopener">
+          <div class="thumb light"><img src="assets/img/pca-reconstruction.png" alt="PCA digit reconstruction" loading="lazy"></div>
+          <h3>PCA Experiments</h3>
+          <p>How well PCA compresses digit and Arabic-letter images, and what it does to classification accuracy.</p>
+          <ul class="chips"><li>PCA</li><li>Arabic</li><li>NumPy</li></ul>
+        </a>
+        <a class="card proj" href="https://github.com/moalawfi/gradient-descent-from-scratch" target="_blank" rel="noopener">
+          <div class="thumb light"><img src="assets/img/gd-fit.png" alt="Regression fit" loading="lazy"></div>
+          <h3>Gradient Descent from Scratch</h3>
+          <p>Linear regression from first principles: MSE, gradients and convergence plots, with no ML library.</p>
+          <ul class="chips"><li>Math</li><li>NumPy</li><li>Matplotlib</li></ul>
+        </a>
+        <div class="card proj">
+          <div class="thumb light"><img src="assets/img/iris.png" alt="Iris classifier app" loading="lazy"></div>
+          <h3>Iris Classifier App</h3>
+          <p>A Streamlit app that classifies Iris flowers into three species.</p>
+          <ul class="chips"><li>Streamlit</li><li>scikit-learn</li></ul>
+          <div class="links">
+            <a class="link" href="https://iris-ml-classification-project.streamlit.app" target="_blank" rel="noopener">▶ Live demo</a>
+            <a class="link" href="https://github.com/moalawfi/iris-classifier-app" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </div>
+        <a class="card proj" href="https://github.com/moalawfi/water-bottle-classifier" target="_blank" rel="noopener">
+          <div class="thumb light"><img src="assets/img/water.png" alt="Water bottle classifier output" loading="lazy"></div>
+          <h3>Water Bottle Classifier</h3>
+          <p>Image model that tells 5-gallon and 500 ml water bottles apart, built with Teachable Machine.</p>
+          <ul class="chips"><li>Computer Vision</li><li>Keras</li></ul>
+        </a>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section reveal">
+      <h2><span class="num mono">04</span> Skills</h2>
+      <div class="skills">
+        <div class="card"><h3>🧠 AI / ML</h3><ul class="chips"><li>NLP</li><li>Arabic NLP</li><li>Computer Vision</li><li>GeoAI</li><li>Deep Learning</li><li>Embeddings</li><li>LLMs</li></ul></div>
+        <div class="card"><h3>🛠️ Tools</h3><ul class="chips"><li>Python</li><li>Java</li><li>scikit-learn</li><li>OpenCV</li><li>Pandas</li><li>NumPy</li><li>Hugging Face</li></ul></div>
+        <div class="card"><h3>🚀 Build &amp; ship</h3><ul class="chips"><li>Flask</li><li>Streamlit</li><li>SQL / MySQL</li><li>SQLite</li><li>Jupyter</li><li>Colab</li><li>Git</li></ul></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal contact">
+      <h2><span class="num mono">05</span> Let's connect</h2>
+      <p class="lead">Open to research collaborations, internships and anything Arabic NLP.</p>
+      <div class="cta">
+        <a class="btn" href="mailto:moalawfi@hotmail.com">✉️ Email me</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/mohammed-alawfi-3913a5378" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn ghost" href="https://github.com/moalawfi" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn ghost" href="https://huggingface.co/datasets/niyyah/niyyah" target="_blank" rel="noopener">Hugging Face ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year">2026</span> Mohammed Alawfi · Medina, Saudi Arabia</p>
+  </footer>
+
+  <script>
+    const menu = document.getElementById('menu'), links = document.getElementById('links');
+    menu.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      menu.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: 0.08 }) : null;
+    document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+  </script>
+</body>
+</html>
